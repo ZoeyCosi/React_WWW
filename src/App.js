@@ -7,7 +7,7 @@ import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
+    <div className="App container-fluid">
       <h3 className="PageTitle">
         Title
         </h3>

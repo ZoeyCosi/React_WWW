@@ -39,7 +39,7 @@ export class TaxonomicRank extends Component{
         {
             return(
                 <div>
-                    <table className="table table-striped">
+                    <table className="table container">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -47,7 +47,7 @@ export class TaxonomicRank extends Component{
                                 <th>photoPath</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="test">
                             {tranks.map(trank=>
                             <tr key={trank.Id}>
                                 <td>{trank.Name}</td>

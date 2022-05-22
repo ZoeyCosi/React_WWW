@@ -3,6 +3,13 @@
   background-image: url('https://videohive.img.customer.envatousercontent.com/files/dcaba5d5-ee1d-411b-82c3-ff56b032ae9b/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=d1e03b7aab9782a9c12b5dc04934321a');
   
 }
+.App ul{
+  margin-left: 285px;
+}
+
+#test{
+  background-image: url('https://images.template.net/wp-content/uploads/2015/11/25190500/White-Light-plain-Background-Design-Download.jpg')
+}
 
 .App-header {
   background-color: #282c34;
