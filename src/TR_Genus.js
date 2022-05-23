@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import { TaxonomicRank} from "./TaxonomicRank.js";
 import {variable} from './Variable.js';
 
-export class TR_Species extends Component{
+export class TR_Genus extends Component{
 
     constructor(props){
         super(props);
@@ -17,7 +17,7 @@ export class TR_Species extends Component{
         }
     }
     refreshList(){
-        fetch(variable.API_URL + "TR_species")
+        fetch(variable.API_URL + "TR_genus")
         .then(response=>response.json())
         .then(data => {
             this.setState({
@@ -48,7 +48,7 @@ export class TR_Species extends Component{
     }
     addClick(){
         this.setState({
-            modalTitle:"Add Species",
+            modalTitle:"Add Genus",
             Id:0,
             Name:"",
         });
@@ -65,7 +65,7 @@ export class TR_Species extends Component{
     }
 
     createClick(){
-        fetch(variable.API_URL+"TR_species",{
+        fetch(variable.API_URL+"TR_genus",{
             method:"POST",
             headers:{
                 "Accept":"application/json",
@@ -98,7 +98,7 @@ export class TR_Species extends Component{
         console.log(obj);       
         
         this.state.tranks[index].Name = this.state.Name;
-        fetch(variable.API_URL+"TR_species/"+Id,{
+        fetch(variable.API_URL+"TR_genus/"+Id,{
             method:"PUT",
             headers:{
                 "Accept":"application/json",
@@ -115,7 +115,7 @@ export class TR_Species extends Component{
         let a = this.state.tranks;
        let b =  a.filter(item=>item!=obj);
        this.setState({tranks:b});
-        fetch(variable.API_URL+"TR_species/"+Id,{
+        fetch(variable.API_URL+"TR_genus/"+Id,{
             method:"DELETE",
             headers:{
                 "Accept":"application/json",
