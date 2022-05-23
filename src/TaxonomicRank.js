@@ -52,6 +52,61 @@ export class TaxonomicRank extends Component{
         });
     }
 
+    createClick(){
+        fetch(variable.API_URL+"taxonomicranks",{
+            method:"POST",
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json"                
+            },
+            body:JSON.stringify({
+                Name:this.state.Name
+            })
+        })
+        .then(response=>response.json())
+        .then((result)=>{
+            this.refreshList();
+        },(error)=>{
+            alert("Failed");
+        })
+    }
+
+    updateClick(){
+        fetch(variable.API_URL+"taxonomicranks",{
+            method:"PUT",
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json"                
+            },
+            body:JSON.stringify({
+                Id:this.state.Id,
+                Name:this.state.Name
+            })
+        })
+        .then(response=>response.json())
+        .then((result)=>{
+            this.refreshList();
+        },(error)=>{
+            alert("Failed");
+        })
+    }
+
+    deleteClick(Id){
+        if(window.confirm("Are you sure?")){
+        fetch(variable.API_URL+"taxonomicranks/"+Id,{
+            method:"DELETE",
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json"                
+            }
+        })
+        .then(response=>response.json())
+        .then((result)=>{
+            this.refreshList();
+        })
+    }
+    }
+
     render(){
 
         var {
@@ -73,7 +128,7 @@ export class TaxonomicRank extends Component{
                     <button type="button" id="addButton"
                     className="btn btn-primary m-2 float-end"
                     data-bs-toggle="modal"
-                    data-bs-target="exampleModal"
+                    data-bs-target="#exampleModal"
                     onClick={()=>this.addClick()}>
                         Add Domain
                     </button>
@@ -95,11 +150,12 @@ export class TaxonomicRank extends Component{
                                 <td>
                                     <button type="button" className="btn btn-warning"
                                     data-bs-toggle="modal"
-                                    data-bs-target="exampleModal"
+                                    data-bs-target="#exampleModal"
                                     onClick={()=>this.editClick(trank)}>
                                         Edit
                                     </button>
-                                    <button type="button" className="btn btn-danger">
+                                    <button type="button" className="btn btn-danger"
+                                    onClick={()=>this.deleteClick(trank.Id)}>
                                         Delete
                                     </button>
                                 </td>
@@ -127,12 +183,14 @@ export class TaxonomicRank extends Component{
                             {Id==0?
                             <button type="button"
                             className="btn btn-primary float-start"
+                            onClick={()=>this.createClick()}
                             >Create</button>
                             :null}
                             
                             {Id!=0?
                             <button type="button"
                             className="btn btn-primary float-start"
+                            onClick={()=>this.updateClick()}
                             >Update</button>
                             :null}
 
