@@ -153,7 +153,7 @@ export class TaxonomicRank extends Component{
                             <tr>
                                 <th>Name</th>
                                 <th>Description</th>
-                                <th>photoPath</th>
+                                <th>Photo</th>
                                 <th>Options</th>
                             </tr>
                         </thead>
