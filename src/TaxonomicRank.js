@@ -25,7 +25,9 @@ export class TaxonomicRank extends Component{
                 tranks:data,
                 isLoaded: true,
                 Name:"",
-                Id:0
+                Id:0,
+                Description:"",
+                PhotoURL:""
             })
         });
     }
@@ -38,19 +40,30 @@ export class TaxonomicRank extends Component{
         this.setState({Name:e.target.value});
     }
 
+    changeDescription =(e)=>{
+        this.setState({Description:e.target.value});
+    }
+    
+    changePhoto =(e)=>{
+        this.setState({PhotoURL:e.target.value});
+    }
+
     addClick(){
         this.setState({
             modalTitle:"Add Domain",
             Id:0,
-            Name:""
+            Name:"",
         });
     }
 
+
     editClick(trank){
         this.setState({
-            modalTitle:"Edit Domain",
+            modalTitle:"Edit",
             Id:trank.Id,
             Name: trank.Name,
+            Description: trank.Description,
+            PhotoURL:trank.PhotoURL,
             item:trank
         });
     }
@@ -63,7 +76,9 @@ export class TaxonomicRank extends Component{
                 "Content-Type":"application/json"                
             },
             body:JSON.stringify({
-                Name:this.state.Name
+                Name:this.state.Name,
+                Description:this.state.Description,
+                PhotoURL:this.state.PhotoURL,
             })
         })
         .then(response=>response.json())
@@ -80,6 +95,8 @@ export class TaxonomicRank extends Component{
         obj[index].Name = this.state.Name;
         let a = this.state.item;
         a.Name = this.state.Name;
+        a.Description = this.state.Description;
+        a.PhotoURL = this.state.PhotoURL;
         this.setState({tranks:obj});
         
         console.log(obj);       
@@ -103,12 +120,7 @@ export class TaxonomicRank extends Component{
         let a = this.state.tranks;
        let b =  a.filter(item=>item!=obj);
        this.setState({tranks:b});
-        if(window.confirm("Are you sure?")){
         fetch(variable.API_URL+"taxonomicranks/"+Id,{
-
-
-
-
             method:"DELETE",
             headers:{
                 "Accept":"application/json",
@@ -121,7 +133,7 @@ export class TaxonomicRank extends Component{
             
         })
     }
-    }
+    
 
     render(){
 
@@ -130,7 +142,9 @@ export class TaxonomicRank extends Component{
             modalTitle, 
             tranks,
             Name,
-            Id
+            Id,
+            Description,
+            PhotoURL
         } = this.state;
 
         if (!isLoaded)
@@ -146,7 +160,7 @@ export class TaxonomicRank extends Component{
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     onClick={()=>this.addClick()}>
-                        Add Domain
+                        Add
                     </button>
                     <table className="table container">
                         <thead>
@@ -195,6 +209,21 @@ export class TaxonomicRank extends Component{
                                 value={Name}
                                 onChange={this.changeName}/>
                             </div>
+
+                            <div className="input-group mb-3">
+                                <span className="input-group-text">Description</span>
+                                <input type="text" className="form-control"
+                                value={Description}
+                                onChange={this.changeDescription}/>
+                            </div>
+
+                            <div className="input-group mb-3">
+                                <span className="input-group-text">Photo</span>
+                                <input type="text" className="form-control"
+                                value={PhotoURL}
+                                onChange={this.changePhoto}/>
+                            </div>
+                           
 
                             {Id===0?
                             <button type="button"
