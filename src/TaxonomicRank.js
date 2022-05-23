@@ -162,11 +162,11 @@ export class TaxonomicRank extends Component{
                     onClick={()=>this.addClick()}>
                         Add
                     </button>
-                    <table className="table container">
+                    <table className="table container table-responsive">
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Description</th>
+                                <th id="table">Description</th>
                                 <th>Photo</th>
                                 <th>Options</th>
                             </tr>
