@@ -4,6 +4,7 @@ import {Home} from './Home';
 import {TaxonomicRank} from './TaxonomicRank';
 import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
 import { TR_Domain } from './TR_Domain';
+import { TR_Species } from './TR_Species';
 
 function App() {
   return (
@@ -25,8 +26,13 @@ function App() {
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/domain">
+              <NavLink className="btn btn-light btn-outline-dark" to="/TR_domain">
               Domain
+              </NavLink>
+            </li>
+            <li className="nav-item- m-1">
+              <NavLink className="btn btn-light btn-outline-dark" to="/TR_species">
+              Species
               </NavLink>
             </li>
           </ul>
@@ -34,7 +40,8 @@ function App() {
         <Switch>
           <Route path='/home' component={Home}/>
           <Route path='/taxonomicrank' component={TaxonomicRank}/>
-          <Route path='/domain' component={TR_Domain}/>
+          <Route path='/TR_domain' component={TR_Domain}/>
+          <Route path='/TR_species' component={TR_Species}/>
         </Switch>
     </div>
     </BrowserRouter>
