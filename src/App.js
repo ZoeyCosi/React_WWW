@@ -3,6 +3,7 @@ import './App.css';
 import {Home} from './Home';
 import {TaxonomicRank} from './TaxonomicRank';
 import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
+import { TR_Domain } from './TR_Domain';
 
 function App() {
   return (
@@ -23,11 +24,17 @@ function App() {
               TaxonomicRank
               </NavLink>
             </li>
+            <li className="nav-item- m-1">
+              <NavLink className="btn btn-light btn-outline-dark" to="/domain">
+              Domain
+              </NavLink>
+            </li>
           </ul>
         </nav>
         <Switch>
           <Route path='/home' component={Home}/>
           <Route path='/taxonomicrank' component={TaxonomicRank}/>
+          <Route path='/domain' component={TR_Domain}/>
         </Switch>
     </div>
     </BrowserRouter>
