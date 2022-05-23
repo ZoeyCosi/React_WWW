@@ -1,3 +1,4 @@
+
 import React,{Component} from "react";
 import {variable} from './Variable.js';
 
@@ -10,6 +11,7 @@ export class TaxonomicRank extends Component{
             tranks:[],
             isLoaded: false,
             modalTitle:"",
+            item:{}
 
 
         }
@@ -48,7 +50,8 @@ export class TaxonomicRank extends Component{
         this.setState({
             modalTitle:"Edit Domain",
             Id:trank.Id,
-            Name:trank.Name
+            Name: trank.Name,
+            item:trank
         });
     }
 
@@ -71,38 +74,51 @@ export class TaxonomicRank extends Component{
         })
     }
 
-    updateClick(){
-        fetch(variable.API_URL+"taxonomicranks",{
+    updateClick(Id){
+        let index = this.state.tranks.indexOf(this.state.item);
+        let obj = this.state.tranks;
+        obj[index].Name = this.state.Name;
+        let a = this.state.item;
+        a.Name = this.state.Name;
+        this.setState({tranks:obj});
+        
+        console.log(obj);       
+        
+        this.state.tranks[index].Name = this.state.Name;
+        fetch(variable.API_URL+"taxonomicranks/"+Id,{
             method:"PUT",
             headers:{
                 "Accept":"application/json",
                 "Content-Type":"application/json"                
             },
-            body:JSON.stringify({
-                Id:this.state.Id,
-                Name:this.state.Name
-            })
+            body:JSON.stringify(a)
         })
         .then(response=>response.json())
         .then((result)=>{
             this.refreshList();
-        },(error)=>{
-            alert("Failed");
         })
     }
 
-    deleteClick(Id){
+    deleteClick(Id, obj){
+        let a = this.state.tranks;
+       let b =  a.filter(item=>item!=obj);
+       this.setState({tranks:b});
         if(window.confirm("Are you sure?")){
         fetch(variable.API_URL+"taxonomicranks/"+Id,{
+
+
+
+
             method:"DELETE",
             headers:{
                 "Accept":"application/json",
                 "Content-Type":"application/json"                
             }
         })
-        .then(response=>response.json())
+        .then(response=>response.json(this.deleteClick))
         .then((result)=>{
             this.refreshList();
+            
         })
     }
     }
@@ -155,7 +171,7 @@ export class TaxonomicRank extends Component{
                                         Edit
                                     </button>
                                     <button type="button" className="btn btn-danger"
-                                    onClick={()=>this.deleteClick(trank.Id)}>
+                                    onClick={()=>this.deleteClick(trank.Id, trank)}>
                                         Delete
                                     </button>
                                 </td>
@@ -180,17 +196,17 @@ export class TaxonomicRank extends Component{
                                 onChange={this.changeName}/>
                             </div>
 
-                            {Id==0?
+                            {Id===0?
                             <button type="button"
                             className="btn btn-primary float-start"
                             onClick={()=>this.createClick()}
                             >Create</button>
                             :null}
                             
-                            {Id!=0?
+                            {Id!==0?
                             <button type="button"
                             className="btn btn-primary float-start"
-                            onClick={()=>this.updateClick()}
+                            onClick={()=>this.updateClick(Id)}
                             >Update</button>
                             :null}
 
