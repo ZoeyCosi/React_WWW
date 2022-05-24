@@ -3,10 +3,12 @@ import React,{Component} from "react";
 import {variable} from './Variable.js';
 
 export class TaxonomicRank extends Component{
-
+// super is used to call the constructor of the parent class
     constructor(props){
         super(props);
 
+        // added tranks array to populate data from taxonomic ranks database
+        // isLoaded boolean to check if connected to database
         this.state={
             tranks:[],
             isLoaded: false,
@@ -16,7 +18,8 @@ export class TaxonomicRank extends Component{
 
         }
     }
-
+    // method to refresh data from teh get api method of taxonomic rank
+    // setting isLoaded boolean to true to not display isLoading
     refreshList(){
         fetch(variable.API_URL + "taxonomicranks")
         .then(response=>response.json())
@@ -32,10 +35,11 @@ export class TaxonomicRank extends Component{
         });
     }
 
+    // calling to refresh list
     componentDidMount(){
         this.refreshList();
     }
-
+    // all three different methods to set the values of each variable through the modal window
     changeName =(e)=>{
         this.setState({Name:e.target.value});
     }
@@ -47,7 +51,7 @@ export class TaxonomicRank extends Component{
     changePhoto =(e)=>{
         this.setState({PhotoURL:e.target.value});
     }
-
+    // got rid of add click call
     addClick(){
         this.setState({
             modalTitle:"Add",
@@ -56,7 +60,7 @@ export class TaxonomicRank extends Component{
         });
     }
 
-
+    // Included all the variables that will be changed through edit
     editClick(trank){
         this.setState({
             modalTitle:"Edit",
@@ -67,7 +71,7 @@ export class TaxonomicRank extends Component{
             item:trank
         });
     }
-
+    // got rid of create click call
     createClick(){
         fetch(variable.API_URL+"taxonomicranks",{
             method:"POST",
@@ -88,7 +92,7 @@ export class TaxonomicRank extends Component{
             alert("Failed");
         })
     }
-
+    // update click method grabs ID to 
     updateClick(Id){
         let index = this.state.tranks.indexOf(this.state.item);
         let obj = this.state.tranks;
@@ -115,7 +119,7 @@ export class TaxonomicRank extends Component{
             this.refreshList();
         })
     }
-
+    // got rid of delete click call
     deleteClick(Id, obj){
         let a = this.state.tranks;
        let b =  a.filter(item=>item!=obj);
@@ -134,7 +138,7 @@ export class TaxonomicRank extends Component{
         })
     }
     
-
+    // listed all the variables used and set conditional statement to check if data is loaded
     render(){
 
         var {

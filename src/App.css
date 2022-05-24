@@ -1,8 +1,16 @@
 .App {
   text-align: center;
+}
+body{
   background-image: url('https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg');
   background-repeat: no-repeat;
   background-size: 3100px;
+}
+#homebackground{
+  background-color:#4d88ff
+}
+#backgroundfooter{
+  background-color:#4d88ff
 }
 
 .App ul{
