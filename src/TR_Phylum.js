@@ -148,7 +148,7 @@ export class TR_Phylum extends Component{
             return(
                 <div>
                     <button type="button" id="addButton"
-                    className="btn btn-primary m-2 float-end"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     onClick={()=>this.addClick()}>

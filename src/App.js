@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
     <div className="App container-fluid">
       <h3 className="PageTitle">
-        Title
+        Wild Wild Web
         </h3>
         <nav className="navbar-expand">
           <ul className="navbar-nav">
@@ -28,47 +28,47 @@ function App() {
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/taxonomicrank">
+              <NavLink className="btn btn-light btn-outline-dark" to="/taxonomicrank" id="taxonomicrank">
               TaxonomicRank
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/domain">
+              <NavLink className="btn btn-light btn-outline-dark" to="/domain" id="domain">
               Domain
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/TR_kingdom">
+              <NavLink className="btn btn-light btn-outline-dark" to="/TR_kingdom" id="kingdom">
               Kingdoms
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/TR_phylum">
+              <NavLink className="btn btn-light btn-outline-dark" to="/TR_phylum" id="phylum">
               Phylum
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/TR_Class">
+              <NavLink className="btn btn-light btn-outline-dark" to="/TR_Class" id="class">
               Class
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/TR_Order">
+              <NavLink className="btn btn-light btn-outline-dark" to="/TR_Order" id="order">
               Order
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/TR_family">
+              <NavLink className="btn btn-light btn-outline-dark" to="/TR_family" id="family">
               Family
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/TR_genus">
+              <NavLink className="btn btn-light btn-outline-dark" to="/TR_genus" id="genus">
               Genus
               </NavLink>
             </li>
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/TR_species">
+              <NavLink className="btn btn-light btn-outline-dark" to="/TR_species" id="species">
               Species
               </NavLink>
             </li>

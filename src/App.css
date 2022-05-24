@@ -1,11 +1,12 @@
 .App {
   text-align: center;
-  background-image: url('https://videohive.img.customer.envatousercontent.com/files/dcaba5d5-ee1d-411b-82c3-ff56b032ae9b/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=d1e03b7aab9782a9c12b5dc04934321a');
-  
+  background-image: url('https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg');
+  background-repeat: no-repeat;
+  background-size: 3100px;
 }
 
 .App ul{
-  margin-left: 325px;
+  margin-left: 500px;
 }
 
 #test{
@@ -16,6 +17,33 @@
   margin-left: 1230px;
 }
 
+#taxonomicrank{
+  background-image: url('https://images.template.net/wp-content/uploads/2015/11/25190500/White-Light-plain-Background-Design-Download.jpg')
+}
+#domain{
+  background-color: red;
+}
+#kingdom{
+  background-color: #ff9900;
+}
+#phylum{
+  background-color: #ffd500;
+}
+#class{
+  background-color: #33cc33;
+}
+#order{
+  background-color: #4d88ff;
+}
+#family{
+  background-color: #a64dff;
+}
+#genus{
+  background-color: #fa0085;
+}
+#species{
+  background-color: #bf4080;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
