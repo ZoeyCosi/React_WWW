@@ -156,13 +156,7 @@ export class TaxonomicRank extends Component{
             return(
                 <div>
                 
-                    <button type="button" id="addButton"
-                    className="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                    onClick={()=>this.addClick()}>
-                        Add
-                    </button>
+                
                     <table className="table container table-responsive">
                         <thead>
                             <tr>
@@ -185,10 +179,7 @@ export class TaxonomicRank extends Component{
                                     onClick={()=>this.editClick(trank)}>
                                         Edit
                                     </button>
-                                    <button type="button" className="btn btn-danger"
-                                    onClick={()=>this.deleteClick(trank.Id, trank)}>
-                                        Delete
-                                    </button>
+                                  
                                 </td>
                             </tr>
                             )}
