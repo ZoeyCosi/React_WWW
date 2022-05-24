@@ -4,6 +4,14 @@ import {Home} from './Home';
 import {TaxonomicRank} from './TaxonomicRank';
 import {BrowserRouter, Route, Switch, NavLink} from 'react-router-dom';
 import { TR_Domain } from './TR_Domain';
+import { TR_Kingdom } from './TR_Kingdom';
+import { TR_Phylum } from './TR_Phylum';
+import { TR_Class } from './TR_Class';
+import { TR_Order } from './TR_Order';
+import { TR_Family } from './TR_Family';
+import { TR_Genus } from './TR_Genus';
+import { TR_Species } from './TR_Species';
+
 
 function App() {
   return (
