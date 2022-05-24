@@ -11,7 +11,9 @@
   background-image: url('https://images.template.net/wp-content/uploads/2015/11/25190500/White-Light-plain-Background-Design-Download.jpg')
 }
 
-
+#addButton{
+  margin-left: 1230px;
+}
 
 .App-header {
   background-color: #282c34;
@@ -28,6 +30,7 @@
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {

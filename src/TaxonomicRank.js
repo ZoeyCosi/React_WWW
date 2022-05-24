@@ -50,7 +50,7 @@ export class TaxonomicRank extends Component{
 
     addClick(){
         this.setState({
-            modalTitle:"Add Domain",
+            modalTitle:"Add",
             Id:0,
             Name:"",
         });
@@ -156,7 +156,7 @@ export class TaxonomicRank extends Component{
             return(
                 <div>
                     <button type="button" id="addButton"
-                    className="btn btn-primary m-2 float-end"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     onClick={()=>this.addClick()}>
@@ -176,7 +176,7 @@ export class TaxonomicRank extends Component{
                             <tr key={trank.Id}>
                                 <td>{trank.Name}</td>
                                 <td>{trank.Description}</td>
-                                <td>{trank.PhotoURL}</td>
+                                <td><img src={trank.PhotoURL} width="300" height="220"/></td>
                                 <td>
                                     <button type="button" className="btn btn-warning"
                                     data-bs-toggle="modal"
