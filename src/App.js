@@ -10,13 +10,11 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App container-fluid">
-      <h3 className="PageTitle">
-        Title
-        </h3>
+    <h3>Wild Wild Web</h3>
         <nav className="navbar-expand">
           <ul className="navbar-nav">
             <li className="nav-item- m-1">
-              <NavLink className="btn btn-light btn-outline-dark" to="/home">
+              <NavLink className="btn btn-light btn-outline-dark" to="/home" id="homeButton">
                 Home
               </NavLink>
             </li>
