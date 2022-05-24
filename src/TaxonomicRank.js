@@ -155,6 +155,7 @@ export class TaxonomicRank extends Component{
         {
             return(
                 <div>
+                
                     <button type="button" id="addButton"
                     className="btn btn-primary"
                     data-bs-toggle="modal"

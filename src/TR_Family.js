@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import {variable} from './Variable.js';
 
-export class TR_Domain extends Component{
+export class TR_Family extends Component{
 
     constructor(props){
         super(props);
@@ -16,7 +16,7 @@ export class TR_Domain extends Component{
         }
     }
     refreshList(){
-        fetch(variable.API_URL + "TR_domain")
+        fetch(variable.API_URL + "TR_family")
         .then(response=>response.json())
         .then(data => {
             this.setState({
@@ -64,7 +64,7 @@ export class TR_Domain extends Component{
     }
 
     createClick(){
-        fetch(variable.API_URL+"TR_domain",{
+        fetch(variable.API_URL+"TR_family",{
             method:"POST",
             headers:{
                 "Accept":"application/json",
@@ -97,7 +97,7 @@ export class TR_Domain extends Component{
         console.log(obj);       
         
         this.state.tranks[index].Name = this.state.Name;
-        fetch(variable.API_URL+"TR_domain/"+Id,{
+        fetch(variable.API_URL+"TR_family"+Id,{
             method:"PUT",
             headers:{
                 "Accept":"application/json",
@@ -114,7 +114,7 @@ export class TR_Domain extends Component{
         let a = this.state.tranks;
        let b =  a.filter(item=>item!=obj);
        this.setState({tranks:b});
-        fetch(variable.API_URL+"TR_domain/"+Id,{
+        fetch(variable.API_URL+"TR_family"+Id,{
             method:"DELETE",
             headers:{
                 "Accept":"application/json",
