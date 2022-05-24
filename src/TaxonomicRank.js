@@ -162,19 +162,22 @@ export class TaxonomicRank extends Component{
                 
                 
                     <table className="table container table-responsive">
-                        <thead>
+                    <colgroup>
+                        <col className="col1" span="4"/>
+                    </colgroup>
+                        <thead className="thead-dark">
                             <tr>
-                                <th>Name</th>
-                                <th id="table">Description</th>
-                                <th>Photo</th>
-                                <th>Options</th>
+                                <th id="name">Name</th>
+                                <th id="desc">Description</th>
+                                <th id="photo">Photo</th>
+                                <th id="opt">Options</th>
                             </tr>
                         </thead>
                         <tbody id="test">
                             {tranks.map(trank=>
                             <tr key={trank.Id}>
-                                <td>{trank.Name}</td>
-                                <td>{trank.Description}</td>
+                                <td id="trankName">{trank.Name}</td>
+                                <td id="trankDesc">{trank.Description}</td>
                                 <td><img src={trank.PhotoURL} width="300" height="220"/></td>
                                 <td>
                                     <button type="button" className="btn btn-warning"

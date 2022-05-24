@@ -4,7 +4,10 @@
 body{
   background-image: url('https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg');
   background-repeat: no-repeat;
-  background-size: 3100px;
+  background-size: 3255px;
+}
+#pagetitle{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 #homebackground{
   background-color:#4d88ff
@@ -18,7 +21,28 @@ body{
 }
 
 #test{
-  background-image: url('https://images.template.net/wp-content/uploads/2015/11/25190500/White-Light-plain-Background-Design-Download.jpg')
+  background-color:#5b76a7;
+  border: 2px solid black;
+  
+  
+}
+.col1{
+  background-color: rgb(59, 58, 58);
+  border: 2px solid black;
+}
+thead tr th{
+  color:white
+}
+
+#trankName{
+  font-size: 26px;
+  font-weight: bold;
+  font-family:Arial, Helvetica, sans-serif
+}
+#trankDesc{
+  font-size: 18px;
+  font-family:monospace;
+  font-weight: bold;
 }
 
 #addButton{
@@ -26,7 +50,7 @@ body{
 }
 
 #taxonomicrank{
-  background-image: url('https://images.template.net/wp-content/uploads/2015/11/25190500/White-Light-plain-Background-Design-Download.jpg')
+  background-image: url('https://images.template.net/wp-content/uploads/2015/11/25190500/White-Light-plain-Background-Design-Download.jpg');
 }
 #domain{
   background-color: red;

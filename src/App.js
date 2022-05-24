@@ -17,7 +17,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App container-fluid">
-      <h3 className="PageTitle">
+      <h3 className="PageTitle" id='pagetitle'>
         Wild Wild Web
         </h3>
         <nav className="navbar-expand">

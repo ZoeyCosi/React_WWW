@@ -169,7 +169,7 @@ export class TR_Order extends Component{
                             <tr key={trank.Id}>
                                 <td>{trank.Name}</td>
                                 <td>{trank.Description}</td>
-                                <td>{trank.PhotoURL}</td>
+                                <td><img src={trank.PhotoURL} width="300" height="220"/></td>
                                 <td>
                                     <button type="button" className="btn btn-warning"
                                     data-bs-toggle="modal"
