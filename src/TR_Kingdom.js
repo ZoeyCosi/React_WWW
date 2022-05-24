@@ -1,8 +1,7 @@
-
 import React,{Component} from "react";
 import {variable} from './Variable.js';
 
-export class TaxonomicRank extends Component{
+export class TR_Kingdom extends Component{
 
     constructor(props){
         super(props);
@@ -16,9 +15,8 @@ export class TaxonomicRank extends Component{
 
         }
     }
-
     refreshList(){
-        fetch(variable.API_URL + "taxonomicranks")
+        fetch(variable.API_URL + "TR_kingdom")
         .then(response=>response.json())
         .then(data => {
             this.setState({
@@ -47,7 +45,6 @@ export class TaxonomicRank extends Component{
     changePhoto =(e)=>{
         this.setState({PhotoURL:e.target.value});
     }
-
     addClick(){
         this.setState({
             modalTitle:"Add Domain",
@@ -55,8 +52,6 @@ export class TaxonomicRank extends Component{
             Name:"",
         });
     }
-
-
     editClick(trank){
         this.setState({
             modalTitle:"Edit",
@@ -69,7 +64,7 @@ export class TaxonomicRank extends Component{
     }
 
     createClick(){
-        fetch(variable.API_URL+"taxonomicranks",{
+        fetch(variable.API_URL+"TR_kingdom",{
             method:"POST",
             headers:{
                 "Accept":"application/json",
@@ -102,7 +97,7 @@ export class TaxonomicRank extends Component{
         console.log(obj);       
         
         this.state.tranks[index].Name = this.state.Name;
-        fetch(variable.API_URL+"taxonomicranks/"+Id,{
+        fetch(variable.API_URL+"TR_kingdom"+Id,{
             method:"PUT",
             headers:{
                 "Accept":"application/json",
@@ -115,12 +110,11 @@ export class TaxonomicRank extends Component{
             this.refreshList();
         })
     }
-
     deleteClick(Id, obj){
         let a = this.state.tranks;
        let b =  a.filter(item=>item!=obj);
        this.setState({tranks:b});
-        fetch(variable.API_URL+"taxonomicranks/"+Id,{
+        fetch(variable.API_URL+"TR_kingdom"+Id,{
             method:"DELETE",
             headers:{
                 "Accept":"application/json",
@@ -133,7 +127,6 @@ export class TaxonomicRank extends Component{
             
         })
     }
-    
 
     render(){
 
@@ -146,7 +139,6 @@ export class TaxonomicRank extends Component{
             Description,
             PhotoURL
         } = this.state;
-
         if (!isLoaded)
         {
             return <div>Loading...</div>
@@ -155,9 +147,8 @@ export class TaxonomicRank extends Component{
         {
             return(
                 <div>
-                
                     <button type="button" id="addButton"
-                    className="btn btn-primary"
+                    className="btn btn-primary m-2 float-end"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     onClick={()=>this.addClick()}>

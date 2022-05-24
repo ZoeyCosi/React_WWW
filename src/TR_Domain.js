@@ -1,5 +1,4 @@
 import React,{Component} from "react";
-import { TaxonomicRank} from "./TaxonomicRank.js";
 import {variable} from './Variable.js';
 
 export class TR_Domain extends Component{
@@ -17,7 +16,7 @@ export class TR_Domain extends Component{
         }
     }
     refreshList(){
-        fetch(variable.API_URL + "domain")
+        fetch(variable.API_URL + "TR_domain")
         .then(response=>response.json())
         .then(data => {
             this.setState({
@@ -65,7 +64,7 @@ export class TR_Domain extends Component{
     }
 
     createClick(){
-        fetch(variable.API_URL+"domain",{
+        fetch(variable.API_URL+"TR_domain",{
             method:"POST",
             headers:{
                 "Accept":"application/json",
@@ -98,7 +97,7 @@ export class TR_Domain extends Component{
         console.log(obj);       
         
         this.state.tranks[index].Name = this.state.Name;
-        fetch(variable.API_URL+"domain/"+Id,{
+        fetch(variable.API_URL+"TR_domain/"+Id,{
             method:"PUT",
             headers:{
                 "Accept":"application/json",
@@ -115,7 +114,7 @@ export class TR_Domain extends Component{
         let a = this.state.tranks;
        let b =  a.filter(item=>item!=obj);
        this.setState({tranks:b});
-        fetch(variable.API_URL+"domain/"+Id,{
+        fetch(variable.API_URL+"TR_domain/"+Id,{
             method:"DELETE",
             headers:{
                 "Accept":"application/json",
