@@ -165,12 +165,12 @@ export class TaxonomicRank extends Component{
                     <colgroup>
                         <col className="col1" span="4"/>
                     </colgroup>
-                        <thead className="thead-dark">
+                        <thead>
                             <tr>
-                                <th id="name">Name</th>
-                                <th id="desc">Description</th>
-                                <th id="photo">Photo</th>
-                                <th id="opt">Options</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Photo</th>
+                                <th>Options</th>
                             </tr>
                         </thead>
                         <tbody id="test">

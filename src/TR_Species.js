@@ -156,6 +156,9 @@ export class TR_Species extends Component{
                         Add
                     </button>
                     <table className="table container table-responsive">
+                    <colgroup>
+                        <col className="col1" span="4"/>
+                    </colgroup>
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -167,8 +170,8 @@ export class TR_Species extends Component{
                         <tbody id="test">
                             {tranks.map(trank=>
                             <tr key={trank.Id}>
-                                <td>{trank.Name}</td>
-                                <td>{trank.Description}</td>
+                                <td id="trankName">{trank.Name}</td>
+                                <td id="trankDesc">{trank.Description}</td>
                                 <td><img src={trank.PhotoURL} width="300" height="220"/></td>
                                 <td>
                                     <button type="button" className="btn btn-warning"

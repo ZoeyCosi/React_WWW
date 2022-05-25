@@ -97,7 +97,7 @@ export class TR_Family extends Component{
         console.log(obj);       
         
         this.state.tranks[index].Name = this.state.Name;
-        fetch(variable.API_URL+"TR_family"+Id,{
+        fetch(variable.API_URL+"TR_family/"+Id,{
             method:"PUT",
             headers:{
                 "Accept":"application/json",
@@ -114,7 +114,7 @@ export class TR_Family extends Component{
         let a = this.state.tranks;
        let b =  a.filter(item=>item!=obj);
        this.setState({tranks:b});
-        fetch(variable.API_URL+"TR_family"+Id,{
+        fetch(variable.API_URL+"TR_family/"+Id,{
             method:"DELETE",
             headers:{
                 "Accept":"application/json",
@@ -155,6 +155,9 @@ export class TR_Family extends Component{
                         Add
                     </button>
                     <table className="table container table-responsive">
+                    <colgroup>
+                        <col className="col1" span="4"/>
+                    </colgroup>
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -166,9 +169,9 @@ export class TR_Family extends Component{
                         <tbody id="test">
                             {tranks.map(trank=>
                             <tr key={trank.Id}>
-                                <td>{trank.Name}</td>
-                                <td>{trank.Description}</td>
-                                <td><img src={trank.PhotoURL} width="300" height="220"/></td>
+                                <td id="trankName">{trank.Name}</td>
+                                <td id="trankDesc">{trank.Description}</td>
+                                <td><img src={trank.PhotoURL} width="300" height="300"/></td>
                                 <td>
                                     <button type="button" className="btn btn-warning"
                                     data-bs-toggle="modal"
