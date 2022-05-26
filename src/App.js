@@ -11,6 +11,8 @@ import { TR_Order } from './TR_Order';
 import { TR_Family } from './TR_Family';
 import { TR_Genus } from './TR_Genus';
 import { TR_Species } from './TR_Species';
+import {Login} from './Login';
+
 
 
 function App() {
@@ -72,7 +74,12 @@ function App() {
               Species
               </NavLink>
             </li>
-
+            <li className="nav-item- m-1">
+              <NavLink className="btn btn-light btn-outline-dark" to="/Login">
+              Sign In
+              </NavLink>
+            </li>
+       
             
           </ul>
         </nav>
@@ -87,6 +94,7 @@ function App() {
           <Route path='/TR_family' component={TR_Family}/>
           <Route path='/TR_genus' component={TR_Genus}/>
           <Route path='/TR_species' component={TR_Species}/>
+          <Route path='/Login' component={Login}/>
         </Switch>
     </div>
     </BrowserRouter>
