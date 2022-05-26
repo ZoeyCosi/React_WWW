@@ -5,7 +5,7 @@ export class Login extends Component{
     render(){
         return(
 <div>
- <main className="form-signin">           
+ <main className="form-signin" id="main">           
     <form>
     <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
     <div className="form-floating">
@@ -28,5 +28,4 @@ export class Login extends Component{
   );
 };
 }
-export default Login;
 
