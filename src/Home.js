@@ -12,13 +12,13 @@ export class Home extends Component{
                     Taxonomy is the study of dividing life into categories that are appropriate. This use to be done by shared <br/>
                     characteristics suchs as similar beaks or fur patterns, but obviously this could lead to false equivalencies! <br/>
                     Taxonomy can be blurry
-                    and seem very arbitrary, but it helps scientist create a network of life and shows <br/>
+                    and seem very arbitrary, but it helps scientists create a network of life and shows <br/>
                     that we all are related in some way, 
                     be it that we are both eukaryotic species or the fact that we<br/>
                      are both mammals, we all have something in common.
                     <br/>
                     <br/>
-                    As said before, the lines can seem like They're arbitrary but they matter.<br/>
+                    As said before, the lines can seem like they're arbitrary but they matter.<br/>
                     For example, Bats have wings and so do 
                     blue jays, so are they both birds? are they similar? <br/>of course not! Blue jays are birds! They lay eggs, they have 
                     feathers, and make nests...<br/> all stuff bats don't do, but all the stuff bats do is similar to what cows, dogs, and 
