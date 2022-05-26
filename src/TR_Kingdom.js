@@ -161,7 +161,7 @@ export class TR_Kingdom extends Component{
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th id="table">Types</th>
+                                <th id="table">Description</th>
                                 <th>Photo</th>
                                 <th>Options</th>
                             </tr>

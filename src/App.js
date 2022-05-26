@@ -11,8 +11,7 @@ import { TR_Family } from './TR_Family';
 import { TR_Genus } from './TR_Genus';
 import { TR_Species } from './TR_Species';
 import {Login} from './Login';
-import Register from './Register';
-
+import Register from './Register.js';
 
 
 

@@ -5,7 +5,7 @@ const Register = () => {
     const[email, setEmail] = useState();
     const[password, setPassword] = useState();
 
-    const submit = (e: SyntheticEvent) => {
+    const submit = (e) => {
         console.log({
             name,
             email,

@@ -8,21 +8,31 @@ body{
 }
 #main{
   background-color: white;
+  margin-left: 777px;
 }
 #nav{
   background-color: rgb(33, 31, 31);
 }
 #login{
-  margin-left: 840px;
+  margin-left: 835px;
 }
 #pagetitle{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
-#homebackground{
-  background-color:#4d88ff
+
+#home{
+  background-color: #282c34;
+  color:white;
+  padding-top: 300px;
+  
 }
-#backgroundfooter{
-  background-color:#4d88ff
+#homeTitle{
+  font-weight: 500;
+  font-size: 60px;
+  font-family: initial;
+}
+#homeP{
+  font-size: 18px;
 }
 
 .App ul{
